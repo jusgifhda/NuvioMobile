@@ -1,3 +1,11 @@
 package com.nuvio.app.features.telegram
 
-expect object TelegramConfig { val API_ID: Int val API_HASH: String }
+import com.nuvio.app.BuildConfig
+
+actual object TelegramConfig {
+    actual val API_ID: Int
+        get() = BuildConfig.TELEGRAM_API_ID
+
+    actual val API_HASH: String
+        get() = BuildConfig.TELEGRAM_API_HASH
+}
